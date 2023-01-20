@@ -4,18 +4,6 @@ import Search from "./components/Search";
 import Weather from "./components/Weather";
 import "./App.css";
 
-// fetch(
-//   `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=Stock&aqi=no`
-// )
-//   .then((res) => {
-//     if (res.ok) {
-//       res.json().then((data) => console.log(data));
-//     } else {
-//       res.json().then((data) => console.log(data.error.message));
-//     }
-//   })
-//   .catch((err) => console.log("hej" + err));
-
 console.log(process.env.REACT_APP_API_KEY);
 
 function App() {
@@ -28,10 +16,11 @@ function App() {
 
   const handleSearch = (location) => {
     fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${location}&aqi=no`
+      `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=${location}&aqi=no&lang=sv`
     )
       .then((response) => response.json())
-      .then((data) => setWeather(data));
+      .then((data) => setWeather(data))
+      .catch((error) => console.error(error));
   };
 
   return (
