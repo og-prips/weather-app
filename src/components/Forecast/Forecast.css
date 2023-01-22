@@ -1,0 +1,123 @@
+.forecast-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.forecast-header {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.forecast-header:hover {
+  background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+  cursor: pointer;
+}
+
+.forecast-header-cell {
+  text-align: center;
+  font-weight: bold;
+  flex: 1;
+}
+
+.forecast-header-cell > div {
+  display: inline-flex;
+}
+
+.forecast-content {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* display: block;
+  width: 100%; */
+}
+
+.forecast-content-header {
+  background-color: rgb(204, 222, 243);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: rgb(86, 117, 182);
+  position: sticky;
+  top: 0;
+}
+
+.forecast-content-header-cell {
+  text-align: center;
+  font-weight: bold;
+  flex: 1;
+}
+
+.forecast-content-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 700px) {
+  .forecast-content-header-cell:nth-child(n + 6) {
+    display: none;
+  }
+
+  .forecast-content-cell:nth-child(n + 6) {
+    display: none;
+  }
+}
+
+.forecast-content-cell {
+  text-align: center;
+  padding: 10px;
+  flex: 1;
+  /* border-bottom: 1px solid grey; */
+}
+
+.forecast-content-cell > div {
+  align-items: center;
+  display: inline-flex;
+}
+
+.value-high {
+  color: rgb(189, 77, 43);
+}
+
+.value-low {
+  color: rgb(79, 98, 182);
+}
+
+.sun-up-down {
+  width: 40px;
+  height: 40px;
+}
+
+.expand {
+  border: none;
+  background: none;
+  float: right;
+  position: relative;
+  padding-right: 20px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}

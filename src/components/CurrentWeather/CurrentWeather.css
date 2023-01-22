@@ -1,0 +1,23 @@
+.current-weather {
+  width: 60%;
+  height: 50%;
+  margin: auto;
+  display: grid;
+  align-items: center;
+  /* justify-content: center; */
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-gap: 10px; */
+}
+
+@media screen and (max-width: 1270px) {
+  .current-weather {
+    width: 100%;
+  }
+}
+
+.current-weather > div {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-evenly;
+  align-items: center;
+}
