@@ -1,5 +1,5 @@
 .forecast-list {
-  width: 60%;
+  width: 65%;
   height: 50%;
   margin: auto;
   background-color: #fffdf6;
@@ -9,6 +9,5 @@
 @media screen and (max-width: 1270px) {
   .forecast-list {
     width: 100%;
-    overflow: hidden;
   }
 }

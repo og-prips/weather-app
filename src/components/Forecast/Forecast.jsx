@@ -79,14 +79,14 @@ const Forecast = ({ day }) => {
           <h4>L: {day.day.mintemp_c}°</h4>
         </div>
         <div className="forecast-header-cell">
-          <div>
-            <img className="sun-up-down" src={sunriseLogo} />
+          <div className="sun-up-down">
+            <img className="sun-up-down-img" src={sunriseLogo} />
             <p>{displaySunrise}</p>
           </div>
         </div>
         <div className="forecast-header-cell">
-          <div>
-            <img className="sun-up-down" src={sunsetLogo} />
+          <div className="sun-up-down">
+            <img className="sun-up-down-img" src={sunsetLogo} />
             <p>{displaySunset}</p>
           </div>
         </div>

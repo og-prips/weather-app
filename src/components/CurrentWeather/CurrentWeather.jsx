@@ -21,8 +21,6 @@ const CurrentWeather = ({ data }) => {
           <h1>{data.current.temp_c}°</h1>
           <img src={data.current.condition.icon} />
         </div>
-
-        {/* <WeatherIcon code={data.current.condition.code} /> */}
       </div>
     </>
   );
