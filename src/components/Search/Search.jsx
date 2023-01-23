@@ -12,6 +12,7 @@ const Search = ({ onSearch }) => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       onSearch(search);
+      setSearch("");
     }
   };
 
@@ -20,6 +21,7 @@ const Search = ({ onSearch }) => {
       <div className="search-container">
         <input
           type="text"
+          value={search}
           onChange={(e) => setSearch(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Search for a city..."

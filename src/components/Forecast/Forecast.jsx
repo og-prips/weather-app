@@ -37,7 +37,8 @@ const Forecast = ({ day }) => {
         </div>
         <div className="forecast-content-cell">
           <p>
-            {hour.wind_dir} {hour.wind_kph} ({hour.gust_kph})
+            {hour.wind_dir} {Math.round(hour.wind_kph / 3.6)} (
+            {Math.round(hour.gust_kph / 3.6)})
           </p>
         </div>
         <div className="forecast-content-cell">
@@ -61,8 +62,10 @@ const Forecast = ({ day }) => {
     <div className="forecast-table">
       <div onClick={toggleExpanded} className="forecast-header">
         <div className="forecast-header-cell">
+          <h4 className="forecast-header-cell-date">{displayDate}</h4>
+        </div>
+        <div className="forecast-header-cell">
           <div>
-            <h4>{displayDate}</h4>
             <img
               src={day.day.condition.icon}
               alt="weather icon"
@@ -78,13 +81,13 @@ const Forecast = ({ day }) => {
         </div>
         <div className="forecast-header-cell">
           <div className="sun-up-down">
-            <img className="sun-up-down-img" src={sunriseLogo} />
+            <img className="sun-up-down-img" src={sunriseLogo} alt="sunrise" />
             <p>{day.astro.sunrise}</p>
           </div>
         </div>
         <div className="forecast-header-cell">
           <div className="sun-up-down">
-            <img className="sun-up-down-img" src={sunsetLogo} />
+            <img className="sun-up-down-img" src={sunsetLogo} alt="sunset" />
             <p>{day.astro.sunset}</p>
           </div>
         </div>
@@ -113,7 +116,7 @@ const Forecast = ({ day }) => {
               <h4>mm</h4>
             </div>
             <div className="forecast-content-header-cell">
-              <h4>kp/h (gust)</h4>
+              <h4>m/s (gust)</h4>
             </div>
             <div className="forecast-content-header-cell">
               <h4>cloud</h4>
