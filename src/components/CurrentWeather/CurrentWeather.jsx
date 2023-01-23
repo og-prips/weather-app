@@ -19,7 +19,7 @@ const CurrentWeather = ({ data }) => {
         </div>
         <div>
           <h1>{data.current.temp_c}°</h1>
-          <img src={data.current.condition.icon} />
+          <img src={data.current.condition.icon} alt="weather-icon" />
         </div>
       </div>
     </>
