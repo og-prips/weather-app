@@ -11,8 +11,6 @@ const Forecast = ({ day }) => {
     month: "short",
     day: "numeric",
   });
-  const displaySunrise = day.astro.sunrise.replace(" AM", "");
-  const displaySunset = day.astro.sunset.replace(" PM", "");
 
   const forecastHours = day.hour.map((hour) => {
     const dateHours = new Date(hour.time).getHours();
@@ -81,13 +79,13 @@ const Forecast = ({ day }) => {
         <div className="forecast-header-cell">
           <div className="sun-up-down">
             <img className="sun-up-down-img" src={sunriseLogo} />
-            <p>{displaySunrise}</p>
+            <p>{day.astro.sunrise}</p>
           </div>
         </div>
         <div className="forecast-header-cell">
           <div className="sun-up-down">
             <img className="sun-up-down-img" src={sunsetLogo} />
-            <p>{displaySunset}</p>
+            <p>{day.astro.sunset}</p>
           </div>
         </div>
         <span className="expand">
