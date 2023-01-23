@@ -6,6 +6,14 @@ import "./Forecast.css";
 const Forecast = ({ day }) => {
   const [expanded, setExpanded] = useState(false);
 
+  const displayDate = new Date(day.date).toLocaleDateString("en-US", {
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+  });
+  const displaySunrise = day.astro.sunrise.replace(" AM", "");
+  const displaySunset = day.astro.sunset.replace(" PM", "");
+
   const forecastHours = day.hour.map((hour) => {
     const dateHours = new Date(hour.time).getHours();
     const displayHour = dateHours.toString().padStart(2, "0");
@@ -47,12 +55,6 @@ const Forecast = ({ day }) => {
     );
   });
 
-  const displayDate = new Date(day.date).toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "short",
-    day: "numeric",
-  });
-
   const toggleExpanded = () => {
     setExpanded(!expanded);
   };
@@ -63,7 +65,11 @@ const Forecast = ({ day }) => {
         <div className="forecast-header-cell">
           <div>
             <h4>{displayDate}</h4>
-            <img src={day.day.condition.icon} alt="weather icon" />
+            <img
+              src={day.day.condition.icon}
+              alt="weather icon"
+              className="weather-icon"
+            />
           </div>
         </div>
         <div className="forecast-header-cell">
@@ -75,13 +81,13 @@ const Forecast = ({ day }) => {
         <div className="forecast-header-cell">
           <div>
             <img className="sun-up-down" src={sunriseLogo} />
-            <p>{day.astro.sunrise}</p>
+            <p>{displaySunrise}</p>
           </div>
         </div>
         <div className="forecast-header-cell">
           <div>
             <img className="sun-up-down" src={sunsetLogo} />
-            <p>{day.astro.sunset}</p>
+            <p>{displaySunset}</p>
           </div>
         </div>
         <span className="expand">
