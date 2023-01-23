@@ -3,7 +3,7 @@ import searchIcon from "../../assets/images/search-icon.svg";
 import "./Search.css";
 
 const Search = ({ onSearch }) => {
-  const [search, setSearch] = useState(null);
+  const [search, setSearch] = useState("");
 
   const handleClick = () => {
     onSearch(search);
