@@ -38,6 +38,7 @@ function App() {
     setError(false);
     setLoading(true);
     console.log("fetching");
+    console.log(location);
 
     fetch(
       `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location}&days=6&aqi=no&lang=en`

@@ -71,13 +71,14 @@ const Forecast = ({ day }) => {
               alt="weather icon"
               className="weather-icon"
             />
+            <h4>{Math.round(day.day.avgtemp_c)}°</h4>
           </div>
         </div>
         <div className="forecast-header-cell">
-          <h4>H: {day.day.maxtemp_c}°</h4>
+          <h4>H: {Math.round(day.day.maxtemp_c)}°</h4>
         </div>
         <div className="forecast-header-cell">
-          <h4>L: {day.day.mintemp_c}°</h4>
+          <h4>L: {Math.round(day.day.mintemp_c)}°</h4>
         </div>
         <div className="forecast-header-cell">
           <div className="sun-up-down">
