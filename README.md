@@ -1,4 +1,4 @@
-![Screenshot](screenshot.png)
+![Screenshot](weather-app-template.png)
 
 # Getting Started with Create React App
 
